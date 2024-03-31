@@ -1,14 +1,17 @@
 """Trains a linear regression model on the formatted dataset"""
 
 from pathlib import Path
+import pickle
 import pandas as pd
 import numpy as np
 from sklearn.model_selection import train_test_split
 from sklearn.linear_model import LinearRegression
 from sklearn.metrics import mean_squared_error, mean_absolute_error
 
-PARENT_DIR = Path(__file__).parent.parent
+PARENT_DIR = Path(__file__).parent
+print(PARENT_DIR)
 DATASET_FILE = Path(PARENT_DIR, "data", "formatted_sleep_data.csv")
+OUTPUT_FILE = Path(PARENT_DIR, "models", "regression_model.pkl")
 
 df = pd.read_csv(DATASET_FILE)
 
@@ -62,3 +65,7 @@ for i in range(len(Y.columns)):
         * 100,
         "%\n",
     )
+
+# save model
+with open(OUTPUT_FILE, "wb") as output_file:
+    pickle.dump(model, output_file)
