@@ -11,7 +11,7 @@ from sklearn.metrics import mean_squared_error, mean_absolute_error
 PARENT_DIR = Path(__file__).parent
 print(PARENT_DIR)
 DATASET_FILE = Path(PARENT_DIR, "data", "formatted_sleep_data.csv")
-OUTPUT_FILE = Path(PARENT_DIR, "models", "regression_model.pkl")
+OUTPUT_FILE = Path(PARENT_DIR, "models", "time-use-health-1-0.pkl")
 
 df = pd.read_csv(DATASET_FILE)
 
