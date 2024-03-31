@@ -9,7 +9,6 @@ from sklearn.linear_model import LinearRegression
 from sklearn.metrics import mean_squared_error, mean_absolute_error
 
 PARENT_DIR = Path(__file__).parent
-print(PARENT_DIR)
 DATASET_FILE = Path(PARENT_DIR, "data", "formatted_sleep_data.csv")
 OUTPUT_FILE = Path(PARENT_DIR, "models", "time-use-health-1-0.pkl")
 
@@ -20,7 +19,7 @@ X = df[["Sleep Duration", "Physical Activity Duration", "Sedentary Time"]]
 Y = df[
     [
         "Stress Level",
-        "Heart Rate",
+        "Resting Heart Rate",
         "Systolic Blood Pressure",
         "Diastolic Blood Pressure",
         "BMI",
@@ -32,13 +31,10 @@ X_train, X_test, y_train, y_test = train_test_split(
 )
 
 model = LinearRegression(fit_intercept=False)
-
 model = model.fit(X_train.values, y_train.values)
 
-
-# print(pd.DataFrame(zip(X_train.columns, model.coef_)))
+# Display equations
 coefficients = pd.DataFrame(model.coef_, index=Y.columns, columns=X.columns)
-# print(f"[{X_train.columns}]\n [{model.coef_.T}] + {model.intercept_}")
 print("Model coefficients:")
 print(coefficients)
 
@@ -49,6 +45,7 @@ if type(model.intercept_).__module__ == np.__name__:
 else:
     print(model.intercept_)
 
+# Test model accuracy
 print("\nModel accuracy:")
 for i in range(len(Y.columns)):
     column = Y.columns[i]

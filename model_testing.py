@@ -22,7 +22,7 @@ while True:
             predictions.T,
             index=[
                 "Stress Level",
-                "Heart Rate",
+                "Resting Heart Rate",
                 "Systolic Blood Pressure",
                 "Diastolic Blood Pressure",
                 "BMI",
