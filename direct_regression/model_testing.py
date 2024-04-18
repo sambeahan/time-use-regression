@@ -3,7 +3,7 @@ from pathlib import Path
 import numpy as np
 import pandas as pd
 
-PARENT_DIR = Path(__file__).parent
+PARENT_DIR = Path(__file__).parent.parent
 MODEL_FILE = Path(PARENT_DIR, "models", "time-use-health-1-0.pkl")
 
 # load model

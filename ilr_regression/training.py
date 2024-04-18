@@ -1,4 +1,4 @@
-"""Trains a linear regression model on the formatted dataset"""
+"""Trains a linear regression model on the data with ILR applied"""
 
 from pathlib import Path
 import pickle
@@ -8,14 +8,14 @@ from sklearn.model_selection import train_test_split
 from sklearn.linear_model import LinearRegression
 from sklearn.metrics import mean_squared_error, mean_absolute_error
 
-PARENT_DIR = Path(__file__).parent
-DATASET_FILE = Path(PARENT_DIR, "data", "formatted_sleep_data.csv")
-OUTPUT_FILE = Path(PARENT_DIR, "models", "time-use-health-1-0.pkl")
+PARENT_DIR = Path(__file__).parent.parent
+DATASET_FILE = Path(PARENT_DIR, "data", "ilr_sleep_data.csv")
+OUTPUT_FILE = Path(PARENT_DIR, "models", "time-use-health-2-0.pkl")
 
 df = pd.read_csv(DATASET_FILE)
 
 
-X = df[["Sleep Duration", "Physical Activity Duration", "Sedentary Time"]]
+X = df[["z1", "z2", "z1z1", "z1z2", "z2z2"]]
 Y = df[
     [
         "Stress Level",
@@ -30,7 +30,7 @@ X_train, X_test, y_train, y_test = train_test_split(
     X, Y, test_size=0.3, random_state=42
 )
 
-model = LinearRegression(fit_intercept=False)
+model = LinearRegression(fit_intercept=True)
 model = model.fit(X_train.values, y_train.values)
 
 # Display equations
