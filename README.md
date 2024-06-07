@@ -17,4 +17,4 @@ Each of these models can be tested with different inputs using the `model_testin
 
 ## Data formatting
 
-The [this dataset](https://www.kaggle.com/datasets/uom190346a/sleep-health-and-lifestyle-dataset) is utilised in this repository to train the regression models. `data_formatting.py` contains the required formatting to be done on this dataset before it can be used to train the regression models. `ilr_regression/ilr_data.py` contains additionally formatting to calculate the log-ratio variables.
+The [this dataset](https://www.kaggle.com/datasets/uom190346a/sleep-health-and-lifestyle-dataset) is utilised in this repository to train the regression models. `data_formatting.py` contains the required formatting to be done on this dataset before it can be used to train the regression models. `ilr_regression/ilr_data.py` contains additional formatting to calculate the log-ratio variables.
