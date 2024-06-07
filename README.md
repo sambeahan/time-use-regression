@@ -1,6 +1,10 @@
 # Health Outcome Time Use Regression
 
-This repository contains files to train and test regression models to map daily time spent sleeping, sedentary and active to health across 5 outcomes: stress level, resting heart rate, systolic blood pressure, distolic blood pressure and body mass index.
+This repository contains files to train and test regression models to map daily time spent sleeping, sedentary and active to health across 5 outcomes: stress level, resting heart rate, systolic blood pressure, distolic blood pressure and body mass index. To install the required dependecies for this repository, run the following command:
+
+```
+pip install -r requirements.txt
+```
 
 ## Trained models
 
