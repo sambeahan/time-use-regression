@@ -5,9 +5,9 @@ This repository contains files to train and test regression models to map daily 
 ## Trained models
 
 `models` contains the trained regression models:
-- Version 1-0: direct regression of time use variables to health outcomes with intercept
-- Version 1-1: direct regression, no intercept
-- Version 2-0: regression of log-ratio transformed time use variables
+- Version 1.0: direct regression of time use variables to health outcomes with intercept
+- Version 1.1: direct regression, no intercept
+- Version 2.0: regression of log-ratio transformed time use variables
 
 Each of these models can be tested with different inputs using the `model_testing.py` file
 
