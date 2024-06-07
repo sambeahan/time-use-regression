@@ -8,9 +8,9 @@ from sklearn.model_selection import train_test_split
 from sklearn.linear_model import LinearRegression
 from sklearn.metrics import mean_squared_error, mean_absolute_error
 
-PARENT_DIR = Path(__file__).parent.parent
+PARENT_DIR = Path(__file__).resolve().parent.parent
 DATASET_FILE = Path(PARENT_DIR, "data", "formatted_sleep_data.csv")
-OUTPUT_FILE = Path(PARENT_DIR, "models", "time-use-health-1-0.pkl")
+OUTPUT_FILE = Path(PARENT_DIR, "models", "time-use-health-1-1.pkl")
 
 df = pd.read_csv(DATASET_FILE)
 
